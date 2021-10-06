@@ -1,7 +1,3 @@
-pub(crate) fn print_var() {
-    println!("enmmm?")
-}
-
 #[derive(Debug)]
 pub struct User{
     name:String,
