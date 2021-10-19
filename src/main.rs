@@ -1,9 +1,9 @@
 mod example;
+mod libs;
 use example::my_struct::User;
 use example::my_var::Books;
 
 use crate::example::{my_lifecycle, my_map, my_unwrap::{my_unwrap_test}, my_vec};
-
 
 fn main() {
     let u  = User::new(String::from("test"),1);
