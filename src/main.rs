@@ -1,27 +1,10 @@
-mod example;
-mod libs;
-use example::my_struct::User;
-use example::my_var::Books;
+mod hundred_case;
 
-use crate::example::{my_lifecycle, my_map, my_unwrap::{my_unwrap_test}, my_vec};
-
+use chrono::{TimeZone, Utc};
+use hundred_case::{one_day::hello_world};
+use hundred_case::two_day::time_after;
 fn main() {
-    let u  = User::new(String::from("test"),1);
-    println!("{:#?}",u);
-    let b = Books{ id: 1, content: "a".to_string()};
-    println!("{:#?}",b.new());
-    // let temp_str_a = "a北京";
-    // let temp_str_b = "b上海";
-    // let res  = my_lifecycle::tryreturn(temp_str_a,temp_str_b);
-    // println!("{}",res);
-    my_lifecycle::look_life();
-    my_vec::init_vec();
-    my_map::init_map();
-    my_unwrap_test();
-    closure();
-}
-
-fn closure(){
-    let _  = (|num| println!("closure,{}",num))("test");
-    let _ = || println!("ok");
+    hello_world();
+    let res = time_after(Utc.ymd(2015, 1, 24).and_hms(23, 59, 59));
+    println!("{}",res)
 }
